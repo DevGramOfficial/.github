@@ -1,0 +1,46 @@
+name: Сообщить об ошибке
+description: Воспроизводимая проблема в DevGram или инструментах
+title: "[Баг] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: project
+    attributes:
+      label: Проект
+      options:
+        - DevGram Android
+        - DevGram SDK
+        - DevGram Builder
+        - Документация
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия
+      placeholder: Например, 12.10.3.0
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что произошло
+      description: Опишите ожидаемое и фактическое поведение.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Как воспроизвести
+      placeholder: |
+        1. Открыть…
+        2. Нажать…
+        3. Увидеть…
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Логи
+      description: Удалите токены, сообщения и личные данные.
+      render: shell
